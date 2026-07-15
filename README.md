@@ -1,5 +1,3 @@
-# SeatLock
-
 A cinema booking system written in Go that lets multiple users book tickets concurrently without double-booking a seat.
 
 ## Demo
