@@ -36,3 +36,14 @@ go run ./cmd
 
 The app is served at [http://localhost:8080](http://localhost:8080).
 
+## Testing
+
+Tests hit Redis directly, so make sure it's running first:
+
+```bash
+docker compose up -d
+go test ./...
+```
+
+This runs `TestConcurrentBooking_ExactlyOneWins`, which fires 100,000 concurrent booking requests at the same seat and asserts exactly one succeeds — the core guarantee the locking strategy is built to provide.
+
